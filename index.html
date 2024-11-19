@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Persona Card - Online Shopper with Visual Impairments</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Styling for the color display text */
+/* Styling for the color display text */
+#color-display {
+    display: none;  /* Hide the color display by default */
+    font-size: 24px; /* Increase the font size */
+    font-weight: bold; /* Make the text bold */
+    text-transform: uppercase; /* Make the text uppercase */
+    position: absolute; /* Ensure the text is positioned dynamically */
+    pointer-events: none; /* Ensure the text doesn't interfere with other elements */
+    padding: 5px 10px; /* Add padding around the text */
+    background: rgb(255, 255, 255); /* White to black gradient */
+    text-shadow: 
+        1px 1px 0 rgba(0, 0, 0, 1),  /* Outline on top-right */
+        -1px -1px 0 rgba(0, 0, 0, 1), /* Outline on top-left */
+        1px -1px 0 rgba(0, 0, 0, 1),  /* Outline on bottom-right */
+        -1px 1px 0 rgba(0, 0, 0, 1);  /* Outline on bottom-left */
+    color: white; /* Default text color to white */
+    border-radius: 5px; /* Rounded corners for the background */
+    z-index: 9999; /* Ensure it stays on top of other elements */
+}
+
+      #canvas {
+        display: none; /* Hide the canvas element */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Set tabindex to 0 for proper tab order -->
+      <div id="headingsContainer" tabindex="1">
+        <h1>Online Shopper</h1>
+        <h2>with Visual Impairments</h2>
+      </div>
+    </header>
+
+    <main>
+      <p tabindex="2">
+        Lee, a 28-year-old artist, enjoys online shopping for art supplies and
+        home décor but faces challenges due to his colorblindness and nystagmus.
+        His red-green colorblindness makes it hard to distinguish shades like
+        red, green, and brown, while his nystagmus causes involuntary eye
+        movements, making it difficult to focus on small text or images.
+        <br /><br />
+        Lee struggles with websites that rely solely on color for information,
+        such as sale prices or product variations. For instance, selecting paint
+        colors or fabric swatches without clear labels can be frustrating. Low
+        contrast, small fonts, and cluttered layouts further complicate his
+        experience by making navigation harder.
+        <br /><br />
+        He has better experiences on sites with labeled color options, high
+        contrast, and enlarged visuals. Tools like screen magnifiers help him
+        focus on details, while color identification apps assist with
+        distinguishing colors. Text-to-speech tools also reduce eye strain by
+        reading out product descriptions. These adaptations allow Lee to shop
+        confidently for his studio needs.
+      </p>
+
+      <button id="changeColorBtn" aria-label="Toggle High Contrast Mode">
+        <img
+          src="highcontrast2.png"
+          alt="Enable high contrast mode for better visibility"
+          width="24"
+          height="24"
+        />
+        <span id="tooltipHighContrast" class="tooltip">High Contrast</span>
+      </button>
+
+      <!-- Sound button -->
+      <button id="toggleSoundBtn" aria-label="Toggle Sound">
+        <img
+          src="soundoff.png"
+          alt="Toggle text-to-speech functionality"
+          width="24"
+          height="24"
+        />
+        <span id="tooltipSound" class="tooltip">Text-to-Speech</span>
+      </button>
+
+      <!-- Font Size buttons -->
+      <div id="fontSizeControls">
+        <button id="increaseFont" aria-label="Increase Font Size">
+          A+
+          <span id="tooltipIncreaseFont" class="tooltip">Increase Font</span>
+        </button>
+        <button id="decreaseFont" aria-label="Decrease Font Size">
+          A-
+          <span id="tooltipDecreaseFont" class="tooltip">Decrease Font</span>
+        </button>
+      </div>
+
+      <audio id="backgroundSound" src="narrativa.mp3" loop></audio>
+
+      <img
+        src="ilustracao2.png"
+        alt="Illustration showing a man with vision impairments experiencing difficulties while shopping online"
+        id="rightImage"
+        tabindex="7"
+      />
+      <canvas id="canvas"></canvas>
+      
+      <div id="color-display"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

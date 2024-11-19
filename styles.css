@@ -1,0 +1,247 @@
+/* General Body Styling */
+body {
+    background-color: #ffffff; /* Initial background color is white */
+    color: black; /* Initial text color is black */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em; /* Base font size (16px by default) */
+    line-height: 1.5;
+    font-weight: bold;
+    margin: 0;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styling */
+header {
+    text-align: left;
+    width: 45%;
+    font-size: 1.375em; /* Header font size slightly larger than body text */
+    margin: 0;
+    padding: 50px 0 0 20px; /* Padding on top for spacing */
+}
+
+/* Ensuring h1 and h2 are the same size */
+h1, h2 {
+    font-size: 1.375em; /* Same size for both h1 and h2 */
+    margin: 0;
+}
+
+/* Main Content Styling */
+main {
+    padding: 20px;
+    width: 45%;
+    text-align: left;
+    position: relative;
+    line-height: 1.5;
+    margin-top: 0;
+    padding-left: 20px;
+}
+
+/* Button Styling */
+button {
+    background-color: #000000; /* Button with good contrast */
+    color: white;
+    border: none;
+    padding: 20px; /* Padding for button */
+    font-size: 24px; /* Larger font size for button text */
+    cursor: pointer;
+    border-radius: 8px; /* Slight border-radius */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Square Buttons: High Contrast, Sound, Increase Font, Decrease Font */
+#changeColorBtn, #toggleSoundBtn, #increaseFont, #decreaseFont {
+    width: 60px; /* Set both buttons to have equal width and height for square shape */
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px; /* Optional: round corners slightly */
+    transition: background-color 0.3s ease;
+}
+
+/* Image inside square buttons */
+#changeColorBtn img, #toggleSoundBtn img {
+    width: 36px; /* Make the image fit inside the square */
+    height: 36px;
+}
+
+/* Tooltip Styling */
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* Show tooltip text when hovering the button */
+button:hover .tooltip {
+    display: block;
+}
+
+/* Position the High Contrast button at the top-center */
+#changeColorBtn {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateX(90px); /* Shift button 60px to the right */
+}
+
+/* Focus styling for the High Contrast button */
+#changeColorBtn:focus {
+    outline: 3px solid #FFD700; /* Yellow outline for focused state */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Optional glowing effect */
+    border-radius: 0; /* Keep border-radius 0 to avoid shifting */
+}
+
+/* Optional tooltip adjustment for keyboard focus */
+#changeColorBtn:focus .tooltip {
+    display: block; /* Show tooltip when the button is focused via Tab */
+}
+
+/* Position the Sound button below High Contrast */
+#toggleSoundBtn {
+    position: fixed;
+    top: 100px; /* Below the High Contrast button */
+    left: 50%;
+    transform: translateX(-50%) translateX(90px); /* Shift button 60px to the right */
+}
+
+/* Focus styling for the Sound button */
+#toggleSoundBtn:focus {
+    outline: 3px solid #FFD700; /* Yellow outline for focused state */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Optional glowing effect */
+    border-radius: 0; /* Keep border-radius 0 to avoid shifting */
+}
+
+/* Optional tooltip adjustment for keyboard focus */
+#toggleSoundBtn:focus .tooltip {
+    display: block; /* Show tooltip when the button is focused via Tab */
+}
+
+/* Position the Increase Font and Decrease Font buttons at the bottom-center, stacked vertically */
+#fontSizeControls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateX(90px); /* Shift the buttons 60px to the right */
+    display: flex;
+    flex-direction: column; /* Stack the buttons vertically */
+    gap: 10px; /* Space between the buttons */
+}
+
+/* Style for individual Increase Font and Decrease Font buttons */
+#fontSizeControls button {
+    width: 60px; /* Set equal width and height for a square shape */
+    height: 60px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 0; /* No padding since we have set the width/height */
+    font-size: 24px; /* Font size for text inside the button */
+    cursor: pointer;
+    border-radius: 8px; /* Optional: round corners slightly */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Tooltip styling for Increase and Decrease font buttons */
+#fontSizeControls button .tooltip {
+    display: none;
+    position: absolute;
+    top: -45px; /* Adjust this value to move the tooltip higher */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* Show tooltip when hovering the font size control buttons */
+#fontSizeControls button:hover .tooltip {
+    display: block;
+}
+
+/* Focus styling for Increase and Decrease font size buttons without shifting */
+#fontSizeControls button:focus {
+    outline: 3px solid #FFD700; /* Yellow outline for focus */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    border-radius: 0; /* Keep border-radius 0 to avoid shifting */
+}
+
+/* Right Side Image Positioning */
+#rightImage {
+    position: fixed; /* Fix the image to the right side of the page */
+    top: 0; /* Align it to the top */
+    right: 0; /* Position it at the right edge of the screen */
+    width: 40%; /* Make the image take up 45% of the width */
+    height: 100vh; /* Full height of the viewport */
+    object-fit: cover; /* Ensure the image covers the space without stretching */
+    z-index: 0; /* Lower z-index for the image */
+}
+
+/* Ensure color display text appears above other elements */
+#color-display {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    pointer-events: none; /* Prevents blocking other interactions */
+    z-index: 10; /* Higher z-index so it appears above other content */
+    color: white; /* Default text color */
+}
+
+/* Focus style for the image */
+#rightImage:focus {
+    outline: 3px solid #FFD700; /* Yellow outline for focus */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    border-radius: 0; /* Keep border-radius 0 to avoid shifting */
+}
+
+/* Add yellow outline on active (clicked) for Increase/Decrease font buttons */
+#fontSizeControls button:active {
+    outline: 5px solid #FFD700; /* Yellow outline */
+}
+
+/* Focus styling for the title group */
+#titleGroup:focus {
+    outline: 3px solid #FFD700; /* Yellow outline on focus */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Optional glow effect */
+}
+
+/* Optional: Remove margins for tighter grouping */
+#titleGroup h1, #titleGroup h2 {
+    margin: 0;
+}
+
+/* Disable outline globally */
+* {
+    outline: none;
+}
+
+/* Focus styling when the element is focused via keyboard navigation (TAB) */
+*:focus-visible {
+    outline: 3px solid #FFD700; /* Yellow outline for focus */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Optional glowing effect */
+    border-radius: 0; /* Keep border-radius 0 to avoid shifting */
+}
